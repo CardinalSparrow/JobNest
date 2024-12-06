@@ -1,8 +1,16 @@
 .nav-menu li:hover {
 	color: #a9031e;
 }
-.nav-menu hr {
-	background: #a9031e;
+hr {
+	background: #18ca65;
 	height: 3px;
 	border: none;
+}
+
+body {
+	height: 100vh;
+}
+
+.app {
+	height: 100vh;
 }
