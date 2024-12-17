@@ -1,21 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Nav from "./components/Nav";
 import "./App.css";
-import About from "./pages/About";
 import Footer from "./components/Footer";
+import Pages from "./pages";
+import Nav from "./components/Nav";
 
 const App = () => {
 	return (
-		<div className="app w-full">
+		<div className="app h-full bg-white sm:flex">
 			<BrowserRouter>
-				<Nav />
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/about" element={<About />} />
-				</Routes>
-				<Footer />
+				<Pages />
 			</BrowserRouter>
 		</div>
 	);

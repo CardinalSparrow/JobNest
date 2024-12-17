@@ -1,8 +1,17 @@
+:root {
+	scroll-behavior: smooth;
+	--primary: #22577a;
+	--secondary: #38a3a5;
+	--bgColor1: #57cc99;
+	--bgColor2: #80ed99;
+	--bgColor3: #c7f9cc;
+}
+
 .nav-menu li:hover {
-	color: #a9031e;
+	color: var(--secondary);
 }
 hr {
-	background: #18ca65;
+	background: var(--primary);
 	height: 3px;
 	border: none;
 }
@@ -13,4 +22,7 @@ body {
 
 .app {
 	height: 100vh;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
 }
