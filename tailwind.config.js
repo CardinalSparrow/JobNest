@@ -7,6 +7,7 @@ export default {
 				primary: "#22577A",
 				secondary: "#38A3A5",
 				background1: "#57CC99",
+				fields: "#A5E0C6",
 				background2: { default: "#80ED99", 100: "#C7F9CC" },
 			},
 			fontFamily: {
