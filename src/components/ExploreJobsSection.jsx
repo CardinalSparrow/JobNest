@@ -12,7 +12,7 @@ const ExploreJobsSection = () => {
 		"Kano",
 		"Kaduna",
 		"Enugu",
-		"Port...",
+		"Port Harcourt",
 		"Bayelsa",
 		"Jos",
 	];
