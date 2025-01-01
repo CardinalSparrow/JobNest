@@ -34,9 +34,9 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 	};
 
 	return (
-		<div className="flex items-center  w-full py-5 my-5 justify-between bg-white border-b border-black-100 shadow-black-200  z-10">
+		<div className="flex items-center  w-full sm:py-5 sm:my-5 my-2 justify-between bg-white border-b border-black-100 shadow-black-200  z-10">
 			<Link to="/" onClick={() => setMenu("home")}>
-				<div className="sm:p-2 p-1 me-2">
+				<div className="sm:p-2 p-1 mx-5">
 					<h1 className="text-primary xl:text-5xl text-3xl">JobNest</h1>
 				</div>
 			</Link>
@@ -52,7 +52,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 				)}
 			</div>
 			<ul
-				className={`nav-menu sm:bg-transparent bg-background2-default opacity-80 sm:relative absolute sm:flex sm:flex-row flex-col  items-center xl:gap-12 sm:gap-12 text-primary text-md sm:w-auto w-[40%] rounded-md sm:top-0 sm:right-0 top-10 right-2 gap-2 sm:pb-0 pb-2 ${
+				className={`nav-menu sm:bg-transparent bg-background2-default opacity-80 sm:relative absolute sm:flex sm:flex-row flex-col  items-center xl:gap-12 sm:gap-12 text-primary text-md sm:w-auto w-[40%] rounded-md sm:top-0 sm:right-0 top-12 right-2 gap-2 sm:pb-0 pb-2 ${
 					mobileMenuOpen ? "flex" : "hidden"
 				}`}
 			>
