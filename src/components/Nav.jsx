@@ -70,7 +70,11 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 						Home{menu === "home" && !AuthPage && <hr />}
 					</Link>
 				</li>
-				<li className="relative">
+				<li
+					className="relative"
+					onMouseEnter={() => setFindJobsOpen(true)}
+					onMouseLeave={() => setFindJobsOpen(false)}
+				>
 					<Link
 						to="/find"
 						className={``}
@@ -81,8 +85,40 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 					>
 						Find Jobs{menu === "find" && !AuthPage && <hr />}
 					</Link>
+					{findJobsOpen && (
+						<ul className="absolute top-8 left-0 bg-white shadow-md rounded-md z-20">
+							<li>
+								<Link
+									to="/find/remote"
+									className="block px-4 py-2 hover:bg-gray-100"
+								>
+									Remote Jobs
+								</Link>
+							</li>
+							<li>
+								<Link
+									to="/find/fulltime"
+									className="block px-4 py-2 hover:bg-gray-100"
+								>
+									Full-time Jobs
+								</Link>
+							</li>
+							<li>
+								<Link
+									to="/find/parttime"
+									className="block px-4 py-2 hover:bg-gray-100"
+								>
+									Part-time Jobs
+								</Link>
+							</li>
+						</ul>
+					)}
 				</li>
-				<li>
+				<li
+					className="relative"
+					onMouseEnter={() => setPostJobsOpen(true)}
+					onMouseLeave={() => setPostJobsOpen(false)}
+				>
 					<Link
 						to="/post"
 						className={``}
@@ -93,6 +129,34 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 					>
 						Post a Job{menu === "post" && !AuthPage && <hr />}
 					</Link>
+					{postJobsOpen && (
+						<ul className="absolute top-8 left-0 bg-white shadow-md rounded-md z-20">
+							<li>
+								<Link
+									to="/post/internship"
+									className="block px-4 py-2 hover:bg-gray-100"
+								>
+									Internship
+								</Link>
+							</li>
+							<li>
+								<Link
+									to="/post/fulltime"
+									className="block px-4 py-2 hover:bg-gray-100"
+								>
+									Full-time Job
+								</Link>
+							</li>
+							<li>
+								<Link
+									to="/post/contract"
+									className="block px-4 py-2 hover:bg-gray-100"
+								>
+									Contract Job
+								</Link>
+							</li>
+						</ul>
+					)}
 				</li>
 				<li>
 					<Link
