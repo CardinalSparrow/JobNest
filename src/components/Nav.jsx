@@ -6,6 +6,8 @@ import { IoCloseCircle, IoMenuSharp } from "react-icons/io5";
 const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 	const [menu, setMenu] = useState("home");
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const [findJobsOpen, setFindJobsOpen] = useState(false);
+	const [postJobsOpen, setPostJobsOpen] = useState(false);
 
 	const navigate = useNavigate();
 
@@ -68,7 +70,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 						Home{menu === "home" && !AuthPage && <hr />}
 					</Link>
 				</li>
-				<li>
+				<li className="relative">
 					<Link
 						to="/find"
 						className={``}
