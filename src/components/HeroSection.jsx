@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Hero from "../images/young-woman.png";
 import ellipse from "../images/Ellipse 2.png";
 import ideaIcon from "../images/Group 7.png";

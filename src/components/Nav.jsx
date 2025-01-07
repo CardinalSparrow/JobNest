@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 // import icon from "../images/login-image.png";
 import { IoCloseCircle, IoMenuSharp } from "react-icons/io5";
@@ -6,8 +6,12 @@ import { IoCloseCircle, IoMenuSharp } from "react-icons/io5";
 const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 	const [menu, setMenu] = useState("home");
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-	const [findJobsOpen, setFindJobsOpen] = useState(false);
-	const [postJobsOpen, setPostJobsOpen] = useState(false);
+	// const [findJobsOpen, setFindJobsOpen] = useState(false);
+	// const [postJobsOpen, setPostJobsOpen] = useState(false);
+	const [dropdownOpen, setDropdownOpen] = useState({
+		find: false,
+		post: false,
+	});
 
 	const navigate = useNavigate();
 
@@ -35,8 +39,24 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 		}
 	};
 
+	const timeoutRef = useRef(null);
+
+	const handleDropdown = (type, isOpen) => {
+		if (timeoutRef.current) {
+			clearTimeout(timeoutRef.current);
+		}
+
+		if (isOpen) {
+			setDropdownOpen((prev) => ({ ...prev, [type]: true }));
+		} else {
+			timeoutRef.current = setTimeout(() => {
+				setDropdownOpen((prev) => ({ ...prev, [type]: false }));
+			}, 200);
+		}
+	};
+
 	return (
-		<div className="flex items-center  w-full sm:py-5 sm:my-5 my-2 justify-between bg-white border-b border-black-100 shadow-black-200  z-10">
+		<nav className=" relative flex items-center w-full sm:py-5 sm:my-5 my-2 justify-between bg-white border-b border-black-100 shadow-black-200  z-50">
 			<Link to="/" onClick={() => setMenu("home")}>
 				<div className="sm:p-2 p-1 mx-5">
 					<h1 className="text-primary xl:text-5xl text-3xl">JobNest</h1>
@@ -72,12 +92,12 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 				</li>
 				<li
 					className="relative"
-					onMouseEnter={() => setFindJobsOpen(true)}
-					onMouseLeave={() => setFindJobsOpen(false)}
+					onMouseEnter={() => handleDropdown("find", true)}
+					onMouseLeave={() => handleDropdown("find", false)}
 				>
 					<Link
 						to="/find"
-						className={``}
+						className={`relative z-50`}
 						onClick={() => {
 							setMenu("find");
 							setMobileMenuOpen(false);
@@ -85,8 +105,20 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 					>
 						Find Jobs{menu === "find" && !AuthPage && <hr />}
 					</Link>
-					{findJobsOpen && (
-						<ul className="absolute top-8 left-0 bg-white shadow-md rounded-md z-20">
+					{dropdownOpen.find && (
+						<ul
+							className="w-max absolute top-8 left-0 bg-white shadow-2xl rounded-md z-50"
+							onMouseEnter={() => handleDropdown("find", true)}
+							onMouseLeave={() => handleDropdown("find", false)}
+						>
+							<li>
+								<Link
+									to="/find/saved"
+									className="block px-4 py-2 hover:bg-gray-100"
+								>
+									Saved Jobs
+								</Link>
+							</li>
 							<li>
 								<Link
 									to="/find/remote"
@@ -98,7 +130,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 							<li>
 								<Link
 									to="/find/fulltime"
-									className="block px-4 py-2 hover:bg-gray-100"
+									className="block px-4 py-2 hover:bg-gray-200"
 								>
 									Full-time Jobs
 								</Link>
@@ -116,12 +148,12 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 				</li>
 				<li
 					className="relative"
-					onMouseEnter={() => setPostJobsOpen(true)}
-					onMouseLeave={() => setPostJobsOpen(false)}
+					onMouseEnter={() => handleDropdown("post", true)}
+					onMouseLeave={() => handleDropdown("post", false)}
 				>
 					<Link
 						to="/post"
-						className={``}
+						className={`relative z-50`}
 						onClick={() => {
 							setMenu("post");
 							setMobileMenuOpen(false);
@@ -129,8 +161,20 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 					>
 						Post a Job{menu === "post" && !AuthPage && <hr />}
 					</Link>
-					{postJobsOpen && (
-						<ul className="absolute top-8 left-0 bg-white shadow-md rounded-md z-20">
+					{dropdownOpen.post && (
+						<ul
+							className="w-max absolute top-8 left-0 bg-white shadow-2xl rounded-md z-20"
+							onMouseEnter={() => handleDropdown("post", true)}
+							onMouseLeave={() => handleDropdown("post", false)}
+						>
+							<li>
+								<Link
+									to="/post/posted"
+									className="block px-4 py-2 hover:bg-gray-100"
+								>
+									Posted Jobs
+								</Link>
+							</li>
 							<li>
 								<Link
 									to="/post/internship"
@@ -192,7 +236,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 					{isLoggedIn ? "Logout" : "Login"}
 				</button>
 			)} */}
-		</div>
+		</nav>
 	);
 };
 
