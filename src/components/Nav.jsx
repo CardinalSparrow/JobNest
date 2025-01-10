@@ -17,7 +17,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 
 	const location = useLocation();
 	const AuthPage =
-		location.pathname === "/login" || location.pathname === "/register";
+		location.pathname === "/sign-in" || location.pathname === "/sign-up";
 
 	const toggleMobileMenu = () => {
 		setMobileMenuOpen(!mobileMenuOpen);
@@ -74,7 +74,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 				)}
 			</div>
 			<ul
-				className={`nav-menu sm:bg-transparent bg-background2-default opacity-80 sm:relative absolute sm:flex sm:flex-row flex-col  items-center xl:gap-12 sm:gap-12 text-primary text-md sm:w-auto w-[40%] rounded-md sm:top-0 sm:right-0 top-12 right-2 gap-2 sm:pb-0 pb-2 ${
+				className={`nav-menu sm:bg-transparent bg-background2-default opacity-90 sm:relative absolute sm:flex sm:flex-row flex-col  items-center xl:gap-12 sm:gap-12 text-primary text-md sm:w-auto w-[40%] rounded-md sm:top-0 sm:right-0 top-12 right-2 gap-2 sm:pb-0 pb-5 ${
 					mobileMenuOpen ? "flex" : "hidden"
 				}`}
 			>
@@ -211,7 +211,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 							setMobileMenuOpen(false);
 						}}
 					>
-						Sign in{menu === "sign-in" && !AuthPage && <hr />}
+						Sign in{menu === "sign-in" && !AuthPage}
 					</Link>
 				</li>
 				<li>
@@ -223,7 +223,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 							setMobileMenuOpen(false);
 						}}
 					>
-						Sign up{menu === "sign-up" && !AuthPage && <hr />}
+						Sign up{menu === "sign-up" && !AuthPage}
 					</Link>
 				</li>
 			</ul>

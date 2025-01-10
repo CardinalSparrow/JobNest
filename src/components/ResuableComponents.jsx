@@ -1,10 +1,14 @@
-import UBA from "../images/UBA-logo-4.png";
-import Dangote from "../images/Dangote_Group_Logo.svg.png";
-
 export const ExploreItem = ({ name }) => (
-	<h2 className="px-4 py-2 bg-secondary" aria-label={name}>
-		{name.length > 8 ? name.substr(0, 6) + "..." : name}
-	</h2>
+	<div className="relative group">
+		<h2 className="px-3 py-2 bg-secondary" aria-label={name}>
+			{name.length > 10 ? name.slice(0, 7) + "..." : name}
+		</h2>
+		<p
+			className={`absolute text-xs -top-6 px-2 py-1 rounded shadow hidden group-hover:block `}
+		>
+			{name}
+		</p>
+	</div>
 );
 
 export const Statistic = ({ value, label, textColor }) => (
@@ -15,11 +19,20 @@ export const Statistic = ({ value, label, textColor }) => (
 );
 
 export const RecruiterLogo = ({ logo }) => (
-	<div className="">
-		<img
-			src={logo}
-			alt="UBA Logo"
-			className="lg:h-20 h-12 w-auto justify-center"
-		/>
+	<div className=" relative group place-items-center">
+		<div>
+			<img
+				src={logo.src}
+				alt={`${logo.name} logo`}
+				className="lg:h-20 sm:h-12 h-6 w-auto justify-center"
+			/>
+			<p
+				className="absolute text-xs -top-5 text-primary py-1 px-2 rounded-md 
+                 left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 
+                group-hover:opacity-100 transition-opacity duration-300"
+			>
+				{logo.name}
+			</p>
+		</div>
 	</div>
 );

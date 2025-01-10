@@ -32,7 +32,7 @@ const ExploreJobsSection = () => {
 	];
 
 	return (
-		<section className="flex flex-col p-5 w-full justify-center xl:mt-72 mt-40 bg-primary text-white xl:text-[30px]">
+		<section className="flex flex-col p-5 w-full justify-center xl:mt-72 mt-40 bg-primary text-white xl:text-[30px] sm:text-[14px] text-[12px]">
 			<div className="text-center">
 				<h2 className="mb-5">Explore Job by Location</h2>
 				<div className="grid sm:grid-cols-6 grid-cols-3 sm:gap-5 gap-3">
