@@ -27,7 +27,7 @@ const RecruiterSignup = () => {
         notificationEmail: ""
     })
 
-    const {formData, setFormData, formErrors, handleChange, passwordError, handleSubmit} = useFormValidation(initialState)
+    const {formData, setFormData, formErrors, handleChange, passwordError, handleSubmit, togglePasswordVisibilty} = useFormValidation(initialState)
     const [loading, setLoading] = useState(false)
     const [passwordVisible, setPasswordVisible] = useState({
         password: false,
@@ -36,17 +36,6 @@ const RecruiterSignup = () => {
     const requiredFields = ['firstName', 'email', 'number', 'lastName', 'position', 'companyName', 'noOfEmployees', 'companyAddress', 'industry', 'companyWebsite', 'notificationEmail']
     const [isSocialSignIn, setIsSocialSignIn] = useState(false)
 
-    
-
-    // Function to toggle password visibility
-    const togglePasswordVisibilty = (field) => {
-        console.log('Toggling visibility for:', field);
-        setPasswordVisible((prevState) => ({
-            ...prevState,
-            [field] : !prevState[field]
-        }))
-        console.log(passwordVisible)
-    }
   return (
     <div>
         <div>
@@ -67,14 +56,14 @@ const RecruiterSignup = () => {
                         <label className='grid relative' htmlFor="password">Password
                             <input className='focus:outline-none p-2 rounded-sm mb-4' type={passwordVisible.password ? "text" : "password"} name="password" value={formData.password} onChange={handleChange} disabled={isSocialSignIn} />
                             {
-                                passwordVisible.password ? <MdOutlineVisibilityOff onClick={() => togglePasswordVisibilty("password")} className='absolute right-2 top-8 size-5' /> :<MdOutlineVisibility onClick={() => togglePasswordVisibilty('password')} className='absolute right-2 top-8 size-5' />
+                                passwordVisible.password ? <MdOutlineVisibilityOff onClick={() => togglePasswordVisibilty("password", setPasswordVisible)} className='absolute right-2 top-8 size-5' /> :<MdOutlineVisibility onClick={() => togglePasswordVisibilty('password', setPasswordVisible)} className='absolute right-2 top-8 size-5' />
                             }
                             {formErrors.password && <p className='text-red-600'>{formErrors.password}</p>}
                         </label>
                         <label className='grid relative' htmlFor="confirmPassword">Confirm Password
                             <input className='focus:outline-none p-2 rounded-sm mb-4' type={passwordVisible.confirmPassword ? "text" : "password"} name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} disabled={isSocialSignIn} />
                             {
-                                passwordVisible.confirmPassword ? <MdOutlineVisibilityOff onClick={() => togglePasswordVisibilty("confirmPassword")} className='absolute right-2 top-8 size-5' /> :<MdOutlineVisibility onClick={() => togglePasswordVisibilty('confirmPassword')} className='absolute right-2 top-8 size-5' />
+                                passwordVisible.confirmPassword ? <MdOutlineVisibilityOff onClick={() => togglePasswordVisibilty("confirmPassword", setPasswordVisible)} className='absolute right-2 top-8 size-5' /> :<MdOutlineVisibility onClick={() => togglePasswordVisibilty('confirmPassword', setPasswordVisible)} className='absolute right-2 top-8 size-5' />
                             }
                             {
                                 passwordError &&

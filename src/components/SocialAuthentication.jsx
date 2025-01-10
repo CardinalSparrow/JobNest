@@ -70,7 +70,6 @@ const SocialAuthentication = ({ formData, setFormData, requiredFields, isSocialS
             }
 
         } catch (error) {
-            console.error("Error signing n with Google", error)
             alert(`Error signing in with ${authProvider}: ` + error.message)
         }
     }

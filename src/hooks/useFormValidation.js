@@ -19,8 +19,7 @@ const useFormValidation = (initialState) => {
     if (name === 'password' || name === 'confirmPassword') {
         handlePassword(value, name)
     }
-    // setFormErrors({})
-    console.log("I am changing the form data")
+    setFormErrors({})
     }
 
      // Function to check if both passwords are the same
@@ -32,11 +31,8 @@ const useFormValidation = (initialState) => {
 
     // Function to validate form
     const validateForm = (isSocialSignIn) => {
-        console.log("ValidateForm")
-        console.log(formData)
         const errors = {}
         Object.keys(formData[0]).forEach((key) =>{ 
-            console.log(key)
              // Skip password validation if user signed in with Google
             if ((key === 'password' || key === 'confirmPassword') && isSocialSignIn) {
                 return;
@@ -46,9 +42,16 @@ const useFormValidation = (initialState) => {
                 errors[key] = "This field is required"
             }
         })
-        console.log(errors)
         setFormErrors(errors)
         return Object.keys(errors).length === 0
+    }
+
+    // Function to toggle password visibility
+    const togglePasswordVisibilty = (field, setPasswordVisible) => {
+        setPasswordVisible((prevState) => ({
+            ...prevState,
+            [field] : !prevState[field]
+        }))
     }
     
     // Handle submit function
@@ -57,8 +60,6 @@ const useFormValidation = (initialState) => {
         setLoading(true)
 
         const isValid = validateForm(isSocialSignIn)
-        console.log("test")
-        console.log(formData)
         if (!isValid || passwordError) {
             setLoading(false)
             return
@@ -91,7 +92,6 @@ const useFormValidation = (initialState) => {
                 // Update existing user information
                 await setDoc(doc(db, "users", user.uid), userData, {merge: true})
                 alert("Successfully signed up")
-                console.log(userData)
             } else {
                 // Create auth account and database entry atomically
                 let userCredential;
@@ -108,8 +108,6 @@ const useFormValidation = (initialState) => {
                 }
             }
         } catch (error) {
-            console.error("Error signing up:", error);
-            console.log("userData:", userData); // Debug log
             if (auth.currentUser) {
                 await auth.currentUser.delete()
             }
@@ -122,7 +120,7 @@ const useFormValidation = (initialState) => {
 
 
 
-    return {formData, setFormData, formErrors, handleChange, validateForm, passwordError, handleSubmit}
+    return {formData, setFormData, formErrors, handleChange, validateForm, passwordError, handleSubmit, togglePasswordVisibilty}
 }
 
 export default useFormValidation
