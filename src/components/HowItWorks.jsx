@@ -35,8 +35,8 @@ const HowItWorks = ({ steps, callToActionText }) => {
 	};
 	return (
 		<section className="flex flex-col xl:text-[30px] sm:text-[24px] text-[14px] text-primary lg:my-10 sm:my-6 sm:mx-3 mx-5 my-3">
-			<h2 className="my-10 text-center font-bold">How it Works?</h2>
-			<div className="grid lg:grid-cols-2  sm:gap-5 gap-3">
+			<h2 className="sm:my-10 my-5 text-center font-bold">How it Works?</h2>
+			<div className="grid lg:grid-cols-2 sm:gap-5 gap-3">
 				<div>
 					<img
 						className="
