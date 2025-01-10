@@ -6,7 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import FindJobs from "./pages/FindJobs";
 const Pages = () => {
 	return (
-		<div className="">
+		<div className="lg:mx-20 sm:mx-10">
 			<Nav />
 			<Routes>
 				<Route path="/" element={<Home />} />
