@@ -8,6 +8,7 @@ export default {
 				secondary: "#38A3A5",
 				background1: "#57CC99",
 				background2: { default: "#80ED99", 100: "#C7F9CC" },
+				background3: "#C4E7FE"
 			},
 			fontFamily: {
 				pthin: ["Poppins-Thin", "sans-serif"],

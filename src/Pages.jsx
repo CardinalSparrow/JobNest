@@ -6,9 +6,9 @@ const Pages = () => {
 	return (
 		<div className="mx-20">
 			<Nav />
-			<Home />
 		</div>
 	);
 };
 
 export default Pages;
+  
