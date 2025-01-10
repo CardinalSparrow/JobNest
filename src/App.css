@@ -6,7 +6,9 @@
 	--bgColor2: #80ed99;
 	--bgColor3: #c7f9cc;
 }
-
+*{
+	box-sizing: border-box;
+}
 .nav-menu li:hover {
 	color: var(--secondary);
 }
