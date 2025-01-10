@@ -1,10 +1,11 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+	faLocationPinLock,
 	faBookmark,
 	faEnvelope,
-	faLocationPinLock,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+
 export default function JobOpening() {
 	return (
 		<div className="w-[300px] h-[150px] mb-6 flex flex-col justify-between p-[5px] bg-white">
@@ -25,7 +26,7 @@ export default function JobOpening() {
 					</div>
 				</div>
 				<div>
-					<FontAwesomeIcon icon={faBookmark} size="" />
+					<FontAwesomeIcon icon={faBookmark} size="sm" />
 				</div>
 			</div>
 			<div className={`text-grey text-sm flex justify-between`}>
