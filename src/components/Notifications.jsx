@@ -6,7 +6,7 @@ const Notifications = () => {
 		<section className="flex flex-col xl:text-[30px] text-[25px] text-primary my-5 items-center text-center sm:p-10 p-5">
 			<IoMdNotifications className="bg-background2-default text-black sm:w-[80px] sm:h-[72px]" />
 			<div className="sm:py-10 py-5">
-				<h1 className="sm:text-[55px] md:text-[48px] text-[24px]">
+				<h1 className=" lg:text-[48px] sm:text-[32px] text-[20px] font-semibold">
 					Get New Job Notifications
 				</h1>
 				<p className="sm:text-[18px] text-xs">

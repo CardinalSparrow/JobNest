@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Hero from "../images/young-woman.png";
 import ellipse from "../images/Ellipse 2.png";
 import ideaIcon from "../images/Group 7.png";
@@ -20,7 +20,7 @@ const HeroSection = () => {
 					</p>
 				</div>
 				<div className="mb-4">
-					<div className="grid grid-cols-3 xl:h-32 lg:h-18 sm:h-14 border-2 border-primary rounded-xl p-1 items-center">
+					<div className="grid grid-cols-3 xl:h-32 lg:h-18 sm:h-14 border-2 border-primary rounded-xl p-1 items-center sm:text-sm text-xs">
 						<input
 							className="text-center text-primary py-2  xl:h-28"
 							type="text"
@@ -37,7 +37,7 @@ const HeroSection = () => {
 							placeholder="Keyword"
 						/>
 					</div>
-					<button className="float-right mt-4 px-4 py-2 rounded-lg bg-secondary text-white">
+					<button className="float-right mt-4 px-4 py-2 rounded-lg bg-secondary text-white sm:text-sm text-xs">
 						Search
 					</button>
 				</div>
