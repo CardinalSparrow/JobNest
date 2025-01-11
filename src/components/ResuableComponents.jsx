@@ -36,3 +36,15 @@ export const RecruiterLogo = ({ logo }) => (
 		</div>
 	</div>
 );
+
+export const SignUpCard = ({ card }) => (
+	<div className="flex flex-col items-center justify-center sm:gap-5 gap-2 sm:mb-10 mb-5 sm:text-[18px] text-[12px] lg:w-[700px] sm:w-[500px]">
+		<img
+			className="sm:w-[60px] w-[40px] p-3 bg-white rounded-full"
+			src={card.src}
+			alt={`${card.name} icon`}
+		/>
+		<h2 className="font-semibold sm:text-[30px] text-[16px]">{card.name}</h2>
+		<p className="max-w-[460px]">{card.content}</p>
+	</div>
+);
