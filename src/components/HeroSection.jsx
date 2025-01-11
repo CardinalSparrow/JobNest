@@ -55,7 +55,7 @@ const HeroSection = () => {
 					alt=""
 				/>
 				<img
-					className="absolute xl:-bottom-64 lg:-bottom-36 -bottom-32 w-full"
+					className="absolute xl:-bottom-64 lg:-bottom-36 -bottom-32 "
 					src={ellipse}
 					alt="Background ellipse decoration"
 				/>
