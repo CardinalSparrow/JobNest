@@ -59,7 +59,7 @@ const HeroSection = () => {
 					src={ellipse}
 					alt="Background ellipse decoration"
 				/>
-				<div className="grid grid-cols-4 absolute xl:-bottom-28 sm:-bottom-16 -bottom-50 w-full xl:gap-20 gap-0 xl:px-16 lg:px-5">
+				<div className="grid grid-cols-4 absolute xl:-bottom-28 sm:-bottom-16 -bottom-14 w-full xl:gap-20 gap-0 xl:px-16 lg:px-5 px-2">
 					<Statistic
 						value="30+"
 						label="Happy Clients"

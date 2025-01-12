@@ -12,9 +12,11 @@ export const ExploreItem = ({ name }) => (
 );
 
 export const Statistic = ({ value, label, textColor }) => (
-	<div className={`${textColor} text-center`}>
-		<h2 className="xl:text-[40px] lg:text-[25px] font-bold">{value}</h2>
-		<p className="sm:text-[16px] text-[10px] font-semibold">{label}</p>
+	<div className={`${textColor} text-center  sm:w-[65px] w-[65px] `}>
+		<h2 className="xl:text-[40px] sm:text-[25px] font-bold">{value}</h2>
+		<p className="lg:text-[18px] sm:text-[14px] text-[12px] font-semibold">
+			{label}
+		</p>
 	</div>
 );
 
