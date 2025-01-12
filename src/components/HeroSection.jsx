@@ -4,6 +4,7 @@ import ellipse from "../images/Ellipse 2.png";
 import ideaIcon from "../images/Group 7.png";
 import calendarIcon from "../images/Group 9.png";
 import { Statistic } from "./ResuableComponents.jsx";
+import SearchBar from "./SearchBar.jsx";
 
 const HeroSection = () => {
 	return (
@@ -21,26 +22,7 @@ const HeroSection = () => {
 					</p>
 				</div>
 				<div className="mb-4">
-					<div className="grid grid-cols-3 xl:h-32 lg:h-18 sm:h-14 border-2 border-primary rounded-xl p-1 items-center sm:text-sm text-xs">
-						<input
-							className="text-center text-primary py-2  xl:h-28"
-							type="text"
-							placeholder="Industry"
-						/>
-						<input
-							className="text-center text-primary py-2 xl:h-28"
-							type="text"
-							placeholder="Location"
-						/>
-						<input
-							className="text-center text-primary py-2 xl:h-28"
-							type="text"
-							placeholder="Keyword"
-						/>
-					</div>
-					<button className="float-right mt-4 px-4 py-2 rounded-lg bg-secondary text-white sm:text-sm text-xs">
-						Search
-					</button>
+					<SearchBar bg="#38A3A5" />
 				</div>
 			</article>
 			<div className=" ml-5 relative">
