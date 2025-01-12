@@ -11,6 +11,7 @@ export default {
 				background1: "#57CC99",
 				fields: "#A5E0C6",
 				background2: { default: "#80ED99", 100: "#C7F9CC" },
+				background3: "#C4E7FE"
 			},
 			fontFamily: {
 				pthin: ["Poppins-Thin", "sans-serif"],

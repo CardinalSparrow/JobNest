@@ -35,8 +35,8 @@ const HowItWorks = ({ steps, callToActionText }) => {
 	};
 	return (
 		<section className="flex flex-col xl:text-[30px] sm:text-[24px] text-[14px] text-primary lg:my-10 sm:my-6 sm:mx-3 mx-5 my-3">
-			<h2 className="my-10 text-center font-bold">How it Works?</h2>
-			<div className="grid lg:grid-cols-2  sm:gap-5 gap-3">
+			<h2 className="sm:my-10 my-5 text-center font-bold">How it Works?</h2>
+			<div className="grid lg:grid-cols-2 sm:gap-5 gap-3">
 				<div>
 					<img
 						className="
@@ -93,8 +93,8 @@ const HowItWorks = ({ steps, callToActionText }) => {
 						{callToActionText.subtext}
 					</p>
 				</div>
-				<div className="flex lg:w-[400px] sm:w-[260px] w-[170px] justify-between xl:text-[22px] lg:text-[18px] sm:text-[14px] text-[12px]">
-					<button className="bg-secondary rounded-[20px] xl:w-[178px] lg:w-[160px] sm:w-[120px] w-[80px] lg:h-[54px] sm:h-[40px]  h-[24px] hover:bg-white hover:text-secondary">
+				<div className="flex lg:w-[400px] sm:w-[260px] w-[190px] justify-between xl:text-[22px] lg:text-[18px] sm:text-[14px] text-[12px]">
+					<button className="bg-secondary rounded-[20px] xl:w-[178px] lg:w-[160px] sm:w-[120px] w-[90px] lg:h-[54px] sm:h-[40px] h-[24px] hover:bg-white hover:text-secondary">
 						Apply for Jobs
 					</button>
 					<button className="bg-white text-primary rounded-[20px] xl:w-[178px] lg:w-[160px] sm:w-[120px] w-[80px] lg:h-[54px] sm:h-[40px] h-[24px] hover:bg-background1 hover:text-white">

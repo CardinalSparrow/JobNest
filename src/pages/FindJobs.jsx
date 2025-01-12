@@ -1,12 +1,10 @@
 import React from "react";
 import SearchJobsContainer from "../components/SearchJobsContainer";
-//import Footer from '../components/Footer'
 import styles from "./findJobs.module.css";
 import JobOpeningContainer from "../components/JobOpeningContainer";
-import Footer from "../components/Footer";
 export default function FindJobs() {
 	return (
-		<div className={`${styles.mainCont} lg:m-20`}>
+		<div className={`${styles.mainCont}`}>
 			<SearchJobsContainer />
 			<div className="text-center mt-5 text-[#1f1f1f]">
 				<p className="font-[600] text-2xl">Jobs suggested for you</p>
