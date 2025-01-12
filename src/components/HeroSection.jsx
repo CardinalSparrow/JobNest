@@ -55,11 +55,11 @@ const HeroSection = () => {
 					alt=""
 				/>
 				<img
-					className="absolute xl:-bottom-64 lg:-bottom-36 -bottom-32 "
+					className="absolute xl:-bottom-64 lg:-bottom-36 -bottom-32 w-full "
 					src={ellipse}
 					alt="Background ellipse decoration"
 				/>
-				<div className="grid grid-cols-4 absolute xl:-bottom-32 sm:-bottom-16 -bottom-20 w-full xl:gap-20 gap-0 xl:px-16 lg:px-5">
+				<div className="grid grid-cols-4 absolute xl:-bottom-28 sm:-bottom-16 -bottom-50 w-full xl:gap-20 gap-0 xl:px-16 lg:px-5">
 					<Statistic
 						value="30+"
 						label="Happy Clients"
