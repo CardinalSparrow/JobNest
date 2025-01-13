@@ -61,7 +61,7 @@ const RecruiterSignup = () => {
 	const [isSocialSignIn, setIsSocialSignIn] = useState(false);
 
 	return (
-		<div>
+		<section className="sm:mx-0 mx-5">
 			<div>
 				<SocialAuthentication
 					formData={formData}
@@ -299,7 +299,7 @@ const RecruiterSignup = () => {
 					</button>
 				</form>
 			</div>
-		</div>
+		</section>
 	);
 };
 
