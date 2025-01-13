@@ -9,7 +9,7 @@ import SearchBar from "./SearchBar.jsx";
 const HeroSection = () => {
 	return (
 		<section className="sm:grid grid-cols-2 h-auto sm:px-0 px-5 py-5 bg-white">
-			<article className="flex flex-col xl:gap-20 sm:gap-10 gap-5 lg:max-w-[650px] lg:mt-24 sm:mt-10">
+			<article className="flex flex-col xl:gap-20 sm:gap-10 gap-3 lg:max-w-[650px] lg:mt-24 sm:mt-10">
 				<div className="px-2 text-primary xl:text-[18px] text-[12px]">
 					<h2 className="w-fit  xl:py-4 rounded-xl xl:text-[60px] lg:text-[40px] sm:text-[27px] text-[22px] font-semibold ">
 						Accelerate Your Career Find the Perfect Job For You
@@ -21,7 +21,7 @@ const HeroSection = () => {
 						perfect match happen!
 					</p>
 				</div>
-				<div className="mb-4">
+				<div className="mb-4 mx-4">
 					<SearchBar bg="#38A3A5" />
 				</div>
 			</article>
