@@ -75,7 +75,7 @@ const JobSeekerSignup = () => {
 	];
 
 	return (
-		<div>
+		<section className="sm:mx-0 mx-5 sm:text-2xl text-sm">
 			<div>
 				<SocialAuthentication
 					formData={formData}
@@ -84,19 +84,19 @@ const JobSeekerSignup = () => {
 					isSocialSignIn={isSocialSignIn}
 					setIsSocialSignIn={setIsSocialSignIn}
 				/>
-				<h2 className="font-medium text-2xl mb-4 text-primary">
+				<h2 className="font-medium sm:mb-4 mb-2 text-primary">
 					Personal Details
 				</h2>
 				<form
 					onSubmit={(e) =>
 						handleSubmit(e, requiredFields, setLoading, isSocialSignIn)
 					}
-					className=""
+					className="text-sm"
 				>
 					{/* Personal Information */}
 
 					<div className="flex flex-col sm:flex-row sm:gap-20 lg:gap-40 bg-background3 p-4">
-						<div className="grid w-full sm:w-1/2">
+						<div className="grid w-full sm:w-1/2 ">
 							<Label
 								name="firstName"
 								label="First Name"
@@ -260,9 +260,7 @@ const JobSeekerSignup = () => {
 
 					{/* Work Details */}
 
-					<h2 className="font-medium text-2xl mb-4 text-primary">
-						Work Details
-					</h2>
+					<h2 className="font-medium mb-4 text-primary">Work Details</h2>
 					<div
 						id="work"
 						className="flex flex-col sm:flex-row sm:gap-20 lg:gap-40 bg-background3 p-4"
@@ -326,21 +324,24 @@ const JobSeekerSignup = () => {
 							/>
 						</div>
 					</div>
-					<input
-						className="mt-6 mb-4"
-						type="file"
-						name="file"
-						id="file"
-						onChange={handleChange}
-					/>
-					<p>
-						Optionally upload a CV no larger than 10MB for file types .pdf .doc
-						.docx .rtf
-					</p>
-					<p>
-						Please note: You will need to upload a CV to apply for jobs, however
-						you can skip the CV upload on sign up.
-					</p>
+					<div className="">
+						<input
+							className="mt-6 mb-4"
+							type="file"
+							name="file"
+							id="file"
+							onChange={handleChange}
+						/>
+						<p>
+							Optionally upload a CV no larger than 10MB for file types .pdf
+							.doc .docx .rtf
+						</p>
+						<p>
+							Please note: You will need to upload a CV to apply for jobs,
+							however you can skip the CV upload on sign up.
+						</p>
+					</div>
+
 					<hr className="mb-4 mt-4" />
 					<label htmlFor="portfolioLink" className="grid mb-4">
 						Add Portfolio Link
@@ -393,7 +394,7 @@ const JobSeekerSignup = () => {
 					</button>
 				</form>
 			</div>
-		</div>
+		</section>
 	);
 };
 
