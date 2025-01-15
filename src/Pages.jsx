@@ -7,6 +7,7 @@ import FindJobs from "./pages/FindJobs";
 import SignUp from "./pages/SignUp";
 import JobSeekerSignup from "./pages/JobSeekerSignup";
 import RecruiterSignup from "./pages/RecruiterSignup";
+import SavedJobs from "./pages/SavedJobs";
 const Pages = () => {
 	return (
 		<div className="lg:mx-20 sm:mx-10">
@@ -19,6 +20,7 @@ const Pages = () => {
 				<Route path="/sign-up" element={<SignUp />} />
 				<Route path="/jobseeker-sign-up" element={<JobSeekerSignup />} />
 				<Route path="/recruiter-sign-up" element={<RecruiterSignup />} />
+				<Route path="/find/saved" element={<SavedJobs/>}/>
 			</Routes>
 			<hr className="w-full absolute left-0 h-0.5" />
 			<Footer />
