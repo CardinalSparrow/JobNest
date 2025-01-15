@@ -61,7 +61,7 @@ const RecruiterSignup = () => {
 	const [isSocialSignIn, setIsSocialSignIn] = useState(false);
 
 	return (
-		<div>
+		<section className="sm:mx-0 mx-5 sm:text-2xl text-sm">
 			<div>
 				<SocialAuthentication
 					formData={formData}
@@ -70,7 +70,7 @@ const RecruiterSignup = () => {
 					isSocialSignIn={isSocialSignIn}
 					setIsSocialSignIn={setIsSocialSignIn}
 				/>
-				<h2 className="font-medium text-2xl mb-4 text-primary">
+				<h2 className="font-medium sm:text-2xl text-sm mb-4 text-primary">
 					Company Representative
 				</h2>
 				<form
@@ -206,7 +206,7 @@ const RecruiterSignup = () => {
 
 					{/* Company Details */}
 
-					<h2 className="font-medium text-2xl mb-4 text-primary">
+					<h2 className="font-medium sm:text-2xl text-sm mb-4 text-primary">
 						Company Details
 					</h2>
 					<div
@@ -299,7 +299,7 @@ const RecruiterSignup = () => {
 					</button>
 				</form>
 			</div>
-		</div>
+		</section>
 	);
 };
 
