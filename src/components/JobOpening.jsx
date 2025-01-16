@@ -7,12 +7,15 @@ import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { useJobContext } from "../Context/JobOpeningContext";
+import { Link } from "react-router-dom";
 
-export default function JobOpening({ jobOpening}) {
-  const { saveJob, savedJobs } = useJobContext();
-  const isBookmarked = savedJobs.some((savedJob) => savedJob.id === jobOpening.id);
+export default function JobOpening({ jobOpening }) {
+  const { saveJob, savedJobs, applyNowClickHandler } = useJobContext();
+  const isBookmarked = savedJobs.some(
+    (savedJob) => savedJob.id === jobOpening.id
+  );
   const handleJobSaving = (job) => {
-	saveJob(job)
+    saveJob(job);
   };
   return (
     <div className="w-[300px] h-[150px] mb-6 flex flex-col justify-between p-[5px] bg-white">
@@ -51,9 +54,11 @@ export default function JobOpening({ jobOpening}) {
         <div>Posted by {jobOpening.postedBy}</div>
       </div>
       <div className={`flex justify-end`}>
-        <button className="bg-secondary text-white p-1 text-sm font-medium rounded-md">
-          Apply Now!
-        </button>
+        <Link to={"/application-details"}>
+          <button className="bg-secondary text-white p-1 text-sm font-medium rounded-md" onClick={()=>applyNowClickHandler(jobOpening)}>
+            Apply Now!
+          </button>
+        </Link>
       </div>
     </div>
   );
