@@ -202,7 +202,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 						</ul>
 					)}
 				</li>
-				<li>
+				{/* <li>
 					<Link
 						to="sign-in"
 						className={``}
@@ -213,7 +213,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 					>
 						Sign in{menu === "sign-in" && !AuthPage}
 					</Link>
-				</li>
+				</li> */}
 				<li>
 					<Link
 						to="sign-up"
