@@ -60,7 +60,7 @@ export const ProfileFormItem = ({ label, placeholder, button }) => (
 			{label}
 		</label>
 		<textarea
-			className="h-full outline-none lg:py-3 lg:max-w-[1000px] sm:max-w-[400px] max-w-[300px] lg:text-[18px] sm:text-[14px] text-[10px] "
+			className="h-full outline-none lg:py-3 lg:max-w-[1000px] sm:max-w-[480px] max-w-[300px] lg:text-[18px] sm:text-[12px] text-[10px] resize-none"
 			type="text"
 			name="about"
 			placeholder={placeholder}
