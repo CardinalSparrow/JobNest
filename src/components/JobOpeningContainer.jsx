@@ -2,7 +2,6 @@ import React from "react";
 import JobOpening from "./JobOpening";
 import { useJobContext } from "../Context/JobOpeningContext";
 
-
 export default function JobOpeningContainer() {
   const { jobOpenings } = useJobContext();
   
@@ -15,4 +14,5 @@ export default function JobOpeningContainer() {
       ))}
     </div>
   );
+
 }

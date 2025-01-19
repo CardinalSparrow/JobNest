@@ -50,3 +50,18 @@ export const SignUpCard = ({ card }) => (
 		<p className="max-w-[460px]">{card.content}</p>
 	</div>
 );
+
+export const ProfileFormItem = ({ label, placeholder, button }) => (
+	<div className="flex flex-col py-3 px-8 border border-black w-full relative rounded-[40px] gap-2">
+		<label htmlFor="about" className="font-semibold text-[30px]">
+			{label}
+		</label>
+		<input
+			className="h-full outline-none py-3 max-w-[1000px]"
+			type="text"
+			name="about"
+			placeholder={placeholder}
+		/>
+		<button className=" absolute right-12 bottom-1">{button}</button>
+	</div>
+);

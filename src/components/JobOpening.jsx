@@ -1,6 +1,6 @@
 import {
-  faLocationPinLock,
-  faEnvelope,
+	faLocationPinLock,
+	faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark as darkBookmark } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
@@ -62,4 +62,5 @@ export default function JobOpening({ jobOpening, bg }) {
       </div>
     </div>
   );
+
 }
