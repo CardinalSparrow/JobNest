@@ -10,6 +10,7 @@ export default {
 				dark: "#1f1f1f",
 				background1: "#57CC99",
 				fields: "#A5E0C6",
+				extra: "#C4E2F6",
 				background2: { default: "#80ED99", 100: "#C7F9CC" },
 				background3: "#C4E7FE"
 			},
@@ -26,5 +27,5 @@ export default {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require('tailwind-scrollbar')],
 };

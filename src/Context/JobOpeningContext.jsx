@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 const JobContext = createContext();
 export const useJobContext = () => useContext(JobContext);
 export const JobProvider = ({ children }) => {
+
 	const [jobOpenings, setJobOpenings] = useState([
 		{
 			id: 1,
@@ -216,4 +217,5 @@ export const JobProvider = ({ children }) => {
 			{children}
 		</JobContext.Provider>
 	);
+
 };
