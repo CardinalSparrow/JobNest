@@ -9,7 +9,7 @@ import React, { useState } from "react";
 import { useJobContext } from "../Context/JobOpeningContext";
 import { Link } from "react-router-dom";
 
-export default function JobOpening({ jobOpening }) {
+export default function JobOpening({ jobOpening, bg }) {
   const { saveJob, savedJobs, applyNowClickHandler } = useJobContext();
   const isBookmarked = savedJobs.some(
     (savedJob) => savedJob.id === jobOpening.id
@@ -18,7 +18,7 @@ export default function JobOpening({ jobOpening }) {
     saveJob(job);
   };
   return (
-    <div className="w-[300px] h-[150px] mb-6 flex flex-col justify-between p-[5px] bg-white">
+    <div className={`w-[300px] min-w-[300px] h-[150px] mb-6 flex flex-col justify-between p-[5px]`} style={{ backgroundColor: bg }}>
       <div className="flex justify-between">
         <div
           className={`flex justify-center items-center bg-background2-100 w-[55px] h-[45px]`}
