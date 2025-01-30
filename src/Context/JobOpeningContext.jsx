@@ -207,9 +207,6 @@ export const JobProvider = ({ children }) => {
 			setSavedJobs((prev) => prev.filter((job) => job.id !== newJob.id));
 		}
 	};
-	useEffect(() => {
-		console.log(savedJobs);
-	}, [savedJobs]);
 	return (
 		<JobContext.Provider
 			value={{ jobOpenings, setJobOpenings, savedJobs, saveJob }}

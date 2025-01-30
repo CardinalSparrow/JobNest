@@ -1,6 +1,6 @@
 import {
-	faLocationPinLock,
-	faEnvelope,
+  faLocationPinLock,
+  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark as darkBookmark } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
@@ -18,7 +18,10 @@ export default function JobOpening({ jobOpening, bg }) {
     saveJob(job);
   };
   return (
-    <div className={`w-[300px] min-w-[300px] h-[150px] mb-6 flex flex-col justify-between p-[5px]`} style={{ backgroundColor: bg }}>
+    <div
+      className={`w-[300px] min-w-[300px] h-[150px] mb-6 flex flex-col justify-between p-[5px]`}
+      style={{ backgroundColor: bg }}
+    >
       <div className="flex justify-between">
         <div
           className={`flex justify-center items-center bg-background2-100 w-[55px] h-[45px]`}
@@ -55,12 +58,14 @@ export default function JobOpening({ jobOpening, bg }) {
       </div>
       <div className={`flex justify-end`}>
         <Link to={"/application-details"}>
-          <button className="bg-secondary text-white p-1 text-sm font-medium rounded-md" onClick={()=>applyNowClickHandler(jobOpening)}>
+          <button
+            className="bg-secondary text-white p-1 text-sm font-medium rounded-md"
+            onClick={() => applyNowClickHandler(jobOpening)}
+          >
             Apply Now!
           </button>
         </Link>
       </div>
     </div>
   );
-
 }
