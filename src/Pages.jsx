@@ -22,8 +22,6 @@ const Pages = () => {
 				<Route path="/profile" element={<Profile />} />
 				<Route path="/sign-in" element={<AuthPage page='sign-in' />} />	
 
-				<Route path="/jobseeker-sign-up" element={<JobSeekerSignup />} />
-				<Route path="/recruiter-sign-up" element={<RecruiterSignup />} />
 				<Route path="/find/saved" element={<SavedJobs />} />
 				<Route path="/application-details" element={<ApplicationDetails />} />
 			</Routes>
