@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
 
-const AuthPage = () => {
-    const [selected, setSelected] = useState('sign-in')
+const AuthPage = ({page}) => {
+    const [selected, setSelected] = useState(page)
   return (
     <div>
         <div className='sm:p-8 p-6 lg:mx-72 mx-6 sm:mx-20 my-6 bg-gradient-to-b from-[#C7F9CC] to-[#57CC99]'>
