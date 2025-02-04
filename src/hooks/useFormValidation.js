@@ -31,7 +31,6 @@ const useFormValidation = (initialState) => {
 
     // Function to validate form
     const validateForm = () => {
-        console.log("working");
         const errors = {}
         Object.keys(formData[0]).forEach((key) =>{ 
 
@@ -53,7 +52,6 @@ const useFormValidation = (initialState) => {
             }
         })       
         setFormErrors(errors)
-        console.log(errors)
         return Object.keys(errors).length === 0
     }
 
@@ -69,7 +67,6 @@ const useFormValidation = (initialState) => {
     const handleSubmit = async (e, formFields, setLoading) => {
         e.preventDefault();
         setLoading(true);
-        console.log(formData)
     
         try {
             // Check if user email already exists
@@ -99,13 +96,11 @@ const useFormValidation = (initialState) => {
                 alert("Successfully signed up");
                 navigate('/');
             } catch (dbError) {
-                console.error("Database Error:", dbError);
                 // If database creation fails, delete the auth account
                 await userCredential.user.delete();
                 throw dbError;
             }
         } catch (error) {
-            console.error("Error:", error);
             alert("Error signing up: " + error.message);
         } finally {
             setLoading(false);
