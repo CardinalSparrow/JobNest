@@ -8,6 +8,7 @@ import woman2 from "../images/victoria-heath-16aAmc4f7fA-unsplash.png";
 import bullet1 from "../images/bullet1.png";
 import bullet2 from "../images/bullet2.png";
 import bullet3 from "../images/bullet3.png";
+import vector from "../images/Vector.png";
 
 const HowItWorks = ({ steps, callToActionText }) => {
 	const bulletImages = [bullet1, bullet2, bullet3];
@@ -16,17 +17,17 @@ const HowItWorks = ({ steps, callToActionText }) => {
 		{
 			title: "Search From Anywhere in the World",
 			description:
-				"Easily access our job portal to explore opportunities from across the globe.",
+				"Our platform connects you with employers across the control, allowing you to search for opportunities from any location and pursue your career aspirations.",
 		},
 		{
 			title: "Browse and Filter Your Options From a Curated List of Jobs",
 			description:
-				"Use our advanced filters to curate job listings tailored to your preferences.",
+				"You can easily navigate and refine your search results using filters to find positions that best match your skills, interests, and preferences giving you an efficient and targeted job search experience",
 		},
 		{
 			title: "Review the Job Details and Submit Your Application Effortlessly",
 			description:
-				"Streamline your application process and secure your next job hassle-free.",
+				"The ease with which you can thoroughly review all the essential details of a specific job opening and then seamlessly submit your applications, minimizing any potential frustrations or complexities.",
 		},
 	];
 	callToActionText = {
@@ -34,8 +35,15 @@ const HowItWorks = ({ steps, callToActionText }) => {
 		subtext: "Take the first step towards a rewarding career with us.",
 	};
 	return (
-		<section className="flex flex-col xl:text-[30px] sm:text-[24px] text-[14px] text-primary lg:my-10 sm:my-6 sm:mx-3 mx-5 my-3">
-			<h2 className="sm:my-10 my-5 text-center font-bold">How it Works?</h2>
+		<section className="flex flex-col xl:text-[30px] sm:text-[24px] text-[14px] text-primary lg:my-10 sm:my-6 sm:mx-0 mx-5 my-3 items-center">
+			<div className="  relative sm:my-10 my-5 text-center  font-bold">
+				<h2 className="">How it Works?</h2>
+				<img
+					src={vector}
+					alt=""
+					className="absolute right-0 bottom-0 xl:w-[90px] sm:w-[75px] w-[43px]"
+				/>
+			</div>
 			<div className="grid lg:grid-cols-2 sm:gap-5 gap-3">
 				<div>
 					<img
@@ -47,7 +55,10 @@ const HowItWorks = ({ steps, callToActionText }) => {
 				</div>
 				<div className="flex flex-col justify-between my-5 sm:max-w-[580px] max-w-[350px]">
 					{steps.map((step, index) => (
-						<div key={index} className="flex justify-between mb-5">
+						<div
+							key={index}
+							className="flex sm:min-w-[470px] min-w-[290px] justify-between mb-5"
+						>
 							{/* Bullet Image */}
 							<img
 								src={bulletImages[index % bulletImages.length]} // Use the corresponding bullet image
@@ -56,7 +67,9 @@ const HowItWorks = ({ steps, callToActionText }) => {
 							/>
 							<div>
 								<h2 className="font-bold">{step.title}</h2>
-								<p className="sm:text-[20px] text-[12px]">{step.description}</p>
+								<p className="sm:text-[16px] text-[12px] ">
+									{step.description}
+								</p>
 							</div>
 						</div>
 					))}
@@ -85,8 +98,8 @@ const HowItWorks = ({ steps, callToActionText }) => {
 					alt="Another smiling woman"
 				/>
 				{/* Call to Action */}
-				<div className="sm:m-10 m-4 items-center xl:max-w-[750px] lg:max-w-[500px] sm:max-w-[400px]  ">
-					<h1 className="xl:text-[55px] lg:text-[40px] sm:text-[30px] text-[16px] font-bold">
+				<div className=" m-4 items-center xl:max-w-[750px] lg:max-w-[550px] sm:max-w-[400px]  ">
+					<h1 className="xl:text-[55px] lg:text-[40px] sm:text-[30px] text-[16px] font-psemibold">
 						{callToActionText.heading}
 					</h1>
 					<p className="xl:text-[18px] lg:text-[16px] text-[12px] p-2">

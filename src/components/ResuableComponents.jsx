@@ -1,6 +1,6 @@
 export const ExploreItem = ({ name }) => (
 	<div className="relative group">
-		<h2 className="px-3 py-2 bg-secondary" aria-label={name}>
+		<h2 className="p-6 rounded-lg bg-secondary" aria-label={name}>
 			{name.length > 10 ? name.slice(0, 7) + "..." : name}
 		</h2>
 		<p
@@ -52,16 +52,19 @@ export const SignUpCard = ({ card }) => (
 );
 
 export const ProfileFormItem = ({ label, placeholder, button }) => (
-	<div className="flex flex-col py-3 px-8 border border-black w-full relative rounded-[40px] gap-2">
-		<label htmlFor="about" className="font-semibold text-[30px]">
+	<div className="flex flex-col sm:py-3 py-1 lg:px-8 sm:px-4 px-2 border border-black w-full relative lg:rounded-[40px] sm:rounded-[30px] rounded-[10px] lg:gap-2">
+		<label
+			htmlFor="about"
+			className="font-semibold lg:text-[30px] sm:text-[18px] text-[14px]"
+		>
 			{label}
 		</label>
-		<input
-			className="h-full outline-none py-3 max-w-[1000px]"
+		<textarea
+			className="h-full outline-none lg:py-3 lg:max-w-[1000px] sm:max-w-[480px] max-w-[300px] lg:text-[18px] sm:text-[12px] text-[10px] resize-none"
 			type="text"
 			name="about"
 			placeholder={placeholder}
 		/>
-		<button className=" absolute right-12 bottom-1">{button}</button>
+		<button className=" absolute sm:right-12 right-6 bottom-1">{button}</button>
 	</div>
 );
