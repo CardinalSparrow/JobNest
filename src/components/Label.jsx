@@ -2,13 +2,13 @@ import React from 'react'
 
 const Label = ({ label, name, elementType='input', type="text", value, onChange, options = [], disabled=false, error}) => {
   return (
-    <label className='w-full' htmlFor={name}>{label}
+    <label className='w-full' htmlFor={name}>
     {
         elementType === 'select' ? (
             <select 
             name={name}
             id={name}
-            className='focus:outline-none p-2 rounded-sm mb-4 min-w-full'
+            className='focus:outline-none p-2 rounded-sm mb-4 min-w-full text-black'
             value={value}
             onChange={onChange}
             disabled={disabled}
@@ -30,13 +30,14 @@ const Label = ({ label, name, elementType='input', type="text", value, onChange,
             ></textarea>
         ) : (
             <input
-                className='focus:outline-none p-2 rounded-sm mb-4 min-w-full'
+                className='focus:outline-none p-2 rounded-sm mb-4 min-w-full text-black'
                 type={type}
                 name={name}
                 id={name}
                 value={value}
                 onChange={onChange}
                 disabled={disabled}
+                placeholder={label}
             />
     )}
         {error && <p className='text-red-600'>{error}</p>}

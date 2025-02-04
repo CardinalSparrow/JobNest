@@ -5,10 +5,10 @@ import Footer from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
 import FindJobs from "./pages/FindJobs";
 import SignUp from "./pages/SignUp";
-import JobSeekerSignup from "./pages/JobSeekerSignup";
-import RecruiterSignup from "./pages/RecruiterSignup";
 import SavedJobs from "./pages/SavedJobs";
 import Profile from "./pages/Profile";
+import SignIn from "./pages/SignIn";
+import AuthPage from "./pages/AuthPage";
 const Pages = () => {
 	return (
 		<div className="lg:mx-20 sm:mx-10">
@@ -17,11 +17,10 @@ const Pages = () => {
 				<Route path="/" element={<Home />} />
 				<Route path="/find" element={<FindJobs />} />
 				<Route path="/post" element={<div>Post a Job Page</div>} />
-				<Route path="/sign-up" element={<SignUp />} />
+				<Route path="/sign-up" element={<AuthPage />} />
 				<Route path="/profile" element={<Profile />} />
-				<Route path="/jobseeker-sign-up" element={<JobSeekerSignup />} />
-				<Route path="/recruiter-sign-up" element={<RecruiterSignup />} />
 				<Route path="/find/saved" element={<SavedJobs />} />
+				<Route path="/sign-in" element={<SignIn />} />	
 			</Routes>
 			<hr className="w-full absolute left-0 h-0.5" />
 			<Footer />
