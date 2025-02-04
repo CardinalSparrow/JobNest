@@ -12,7 +12,7 @@ import SignIn from "./pages/SignIn";
 import AuthPage from "./pages/AuthPage";
 const Pages = () => {
 	return (
-		<div className="lg:mx-20 sm:mx-10">
+		<div className="lg:mx-14 sm:mx-10">
 			<Nav />
 			<Routes>
 				<Route path="/" element={<Home />} />
@@ -20,11 +20,12 @@ const Pages = () => {
 				<Route path="/post" element={<div>Post a Job Page</div>} />
 				<Route path="/sign-up" element={<AuthPage page='sign-up' />} />
 				<Route path="/profile" element={<Profile />} />
-				<Route path="/find/saved" element={<SavedJobs/>}/>
-				<Route path="/application-details" element={<ApplicationDetails/>}/>
-				
-				<Route path="/find/saved" element={<SavedJobs />} />
 				<Route path="/sign-in" element={<AuthPage page='sign-in' />} />	
+
+				<Route path="/jobseeker-sign-up" element={<JobSeekerSignup />} />
+				<Route path="/recruiter-sign-up" element={<RecruiterSignup />} />
+				<Route path="/find/saved" element={<SavedJobs />} />
+				<Route path="/application-details" element={<ApplicationDetails />} />
 			</Routes>
 			<hr className="w-full absolute left-0 h-0.5" />
 			<Footer />

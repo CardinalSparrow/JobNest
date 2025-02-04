@@ -10,7 +10,8 @@ const Notifications = () => {
 					Get New Job Notifications
 				</h1>
 				<p className="sm:text-[18px] text-xs">
-					Lorem ipsum dolor sit amet, consectetur tremor adipiscing elit. Mauris
+					Keep up with relevant job openings and track new postings
+					effortlessly.{" "}
 				</p>
 			</div>
 			<div className="flex w-full sm:gap-10 gap-5  justify-center">
