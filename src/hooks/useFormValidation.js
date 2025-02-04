@@ -1,4 +1,4 @@
-import { collection, doc, getDocs, query, setDoc, where } from 'firebase/firestore'
+import { collection, doc, getDocs, query, serverTimestamp, setDoc, where } from 'firebase/firestore'
 import React, { useState } from 'react'
 import { auth, db } from '../utils/firebase'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
@@ -69,16 +69,6 @@ const useFormValidation = (initialState) => {
         setLoading(true);
     
         try {
-            // Check if user email already exists
-            const usersRef = collection(db, "users");
-            const q = query(usersRef, where("email", "==", formData.email));
-            const querySnapshot = await getDocs(q);
-            if (!querySnapshot.empty) {
-                alert("Email already exists, please sign in");
-                navigate("/sign-in");
-                return;
-            }
-
             // Create auth account first
             const userCredential = await createUserWithEmailAndPassword(
                 auth,
@@ -86,28 +76,37 @@ const useFormValidation = (initialState) => {
                 formData.password
             );
     
-            // Then create user document
+            // Create user data object
             const userData = {};
             formFields.forEach(field => {
-            userData[field] = formData[field];
+                userData[field] = formData[field];
             });
+    
             try {
-                await setDoc(doc(db, "users", userCredential.user.uid), userData);
+                // Only attempt database write if user is authenticated
+                if (userCredential.user) {
+                    await setDoc(doc(db, "users", userCredential.user.uid), {
+                        ...userData,
+                        createdAt: serverTimestamp()
+                    });
+                }
                 alert("Successfully signed up");
                 navigate('/');
             } catch (dbError) {
-                // If database creation fails, delete the auth account
-                await userCredential.user.delete();
+                console.error("Database Error:", dbError);
+                // Clean up auth if database fails
+                if (userCredential.user) {
+                    await userCredential.user.delete();
+                }
                 throw dbError;
             }
         } catch (error) {
+            console.error("Auth Error:", error);
             alert("Error signing up: " + error.message);
         } finally {
             setLoading(false);
         }
     };
-
-
 
     return {formData, setFormData, formErrors, handleChange, validateForm, handleSubmit, togglePasswordVisibilty}
 }
