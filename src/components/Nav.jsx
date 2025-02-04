@@ -56,7 +56,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 	};
 
 	return (
-		<nav className=" relative flex items-center w-full sm:py-5 sm:my-5 my-2 justify-between bg-white border-b border-black-100 shadow-black-200  z-50">
+		<nav className=" relative flex items-center w-full sm:py-5 sm:my-5 my-2 justify-between bg-white border-b border-black-100 shadow-black-200  z-30">
 			<Link to="/" onClick={() => setMenu("home")}>
 				<div className="sm:p-2 p-1 mx-5">
 					<h1 className="text-primary xl:text-5xl text-3xl">JobNest</h1>

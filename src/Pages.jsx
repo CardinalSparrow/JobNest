@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import FindJobs from "./pages/FindJobs";
 import SignUp from "./pages/SignUp";
 import SavedJobs from "./pages/SavedJobs";
+import ApplicationDetails from "./pages/ApplicationDetails";
 import Profile from "./pages/Profile";
 import SignIn from "./pages/SignIn";
 import AuthPage from "./pages/AuthPage";
@@ -19,6 +20,11 @@ const Pages = () => {
 				<Route path="/post" element={<div>Post a Job Page</div>} />
 				<Route path="/sign-up" element={<AuthPage />} />
 				<Route path="/profile" element={<Profile />} />
+				<Route path="/jobseeker-sign-up" element={<JobSeekerSignup />} />
+				<Route path="/recruiter-sign-up" element={<RecruiterSignup />} />
+				<Route path="/find/saved" element={<SavedJobs/>}/>
+				<Route path="/application-details" element={<ApplicationDetails/>}/>
+				
 				<Route path="/find/saved" element={<SavedJobs />} />
 				<Route path="/sign-in" element={<SignIn />} />	
 			</Routes>
