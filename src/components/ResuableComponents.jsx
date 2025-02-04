@@ -1,6 +1,6 @@
 export const ExploreItem = ({ name }) => (
 	<div className="relative group">
-		<h2 className="px-3 py-2 bg-secondary" aria-label={name}>
+		<h2 className="p-6 rounded-lg bg-secondary" aria-label={name}>
 			{name.length > 10 ? name.slice(0, 7) + "..." : name}
 		</h2>
 		<p
