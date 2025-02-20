@@ -136,7 +136,7 @@ export default function ApplicationDetails() {
     <div className="lg:grid lg:grid-cols-[2fr_1fr]  gap-6 w-1/1 h-auto p-5 w-[100%]">
       <div>
         <div className="lg:flex justify-between">
-          <div className="sm:mb-20">
+          <div className="">
             <div className="flex items-center">
               <FontAwesomeIcon icon={faCircle} size="3x" />
               <h3 className="font-[600] text-xl ml-2">
