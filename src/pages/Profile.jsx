@@ -4,9 +4,13 @@ import { ProfileFormItem } from "../components/ResuableComponents";
 
 const Profile = () => {
 	return (
-		<section className="flex flex-col sm:text-[18px] mt-20 sm:p-10 p-5 gap-4">
-			<div className="bg-primary text-white flex flex-col items-center relative rounded-[50px] pt-20">
-				<img src={Placepic} alt="" className="absolute -top-28 w-[200px]" />
+		<section className="flex flex-col sm:text-[18px] sm:mt-20 mt-10 sm:p-10 p-5 gap-4">
+			<div className="bg-primary text-white flex flex-col items-center relative rounded-[50px] sm:pt-20 pt-12">
+				<img
+					src={Placepic}
+					alt=""
+					className="absolute lg:-top-28 sm:-top-12 -top-8 lg:w-[200px] sm:w-[120px] w-[80px]"
+				/>
 				<div>
 					<p>Username</p>
 					<p>Experience</p>
