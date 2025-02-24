@@ -1,75 +1,73 @@
-import React from "react";
-import Placepic from "../images/fortune-vieyra-xdmtQVVKibU-unsplash.png";
-import { ProfileFormItem } from "../components/ResuableComponents";
+import React, { useState } from 'react'
+import profile_img from '../images/profile_img.png'
+import { IoLocationSharp } from 'react-icons/io5'
+import { CiClock2 } from "react-icons/ci";
+import { TfiCup } from "react-icons/tfi";
+import Experience from '../components/Experience'
+import Biography from '../components/Biography'
+import Skills from '../components/Skills'
+import Portfolio from '../components/Portfolio'
 
 const Profile = () => {
-	return (
-		<section className="flex flex-col sm:text-[18px] sm:mt-20 mt-10 sm:p-10 p-5 gap-4">
-			<div className="bg-primary text-white flex flex-col items-center relative rounded-[50px] sm:pt-20 pt-12">
-				<img
-					src={Placepic}
-					alt=""
-					className="absolute lg:-top-28 sm:-top-12 -top-8 lg:w-[200px] sm:w-[120px] w-[80px]"
-				/>
-				<div>
-					<p>Username</p>
-					<p>Experience</p>
-					<p>Availability</p>
-					<p>Location</p>
-					<p>Qualification</p>
+	const [profile, setProfile] = useState("experience")
+  return (
+	<div>
+		<div className='flex flex-col md:flex-row md:justify-between text-center md:text-start items-center md:items-start'>
+			<div className='w-[15%]'>
+				<img src={profile_img} alt="" className='' />
+			</div>
+			<div className='justify-start md:w-[40%] w-[70%]'>
+				<h2 className='font-semibold text-primary'>James Justin</h2>
+				<p className='flex text-sm mb-3 justify-center md:justify-normal'><IoLocationSharp className='self-center' /> <span>Lagos, Nigeria</span></p>
+				<p className='mb-3'>
+					I am a versatile professional with expertise in Virtual assistance, UI/UX design and social media management. 
+					I bring strong organizational and communication skills to every role...
+				</p>
+				<div className='flex gap-4 md:justify-normal justify-center'>
+					<div className='flex text-xs gap-2'>
+						<CiClock2 className='self-center size-6' />
+						<div>
+							<p className='font-bold'>2+ years Job</p>
+							<p>Experience</p>
+						</div>
+					</div>
+					<div className='flex text-xs gap-2'>
+						<TfiCup className='self-center size-6' />
+						<div>
+							<p className='font-bold'>3 Certificates</p>
+							<p>Achieved</p>
+						</div>
+					</div>
 				</div>
 			</div>
-			<ProfileFormItem
-				label={"About Me"}
-				placeholder={"Give a short overview of your career history and skills."}
-				button={"Add"}
-			/>
-			<ProfileFormItem
-				label={"Exerience"}
-				placeholder={
-					"Include your work experience, such as internships, part-time roles, or long-term specialized positions"
-				}
-				button={"Add"}
-			/>
-			<ProfileFormItem
-				label={"Qualification"}
-				placeholder={"List your qualifications here."}
-				button={"Add"}
-			/>
-			<ProfileFormItem
-				label={"Certification"}
-				placeholder={
-					"Received any certificates? Show them off to help enrich your career profile."
-				}
-				button={"Edit"}
-			/>
-			<ProfileFormItem
-				label={"Skills"}
-				placeholder={"What are your areas of expertise?"}
-				button={"Edit"}
-			/>
-			<ProfileFormItem
-				label={"Language Skills"}
-				placeholder={
-					"Let your employers know if you speak more than one language."
-				}
-				button={"Add"}
-			/>
-			<ProfileFormItem
-				label={"Cover Letter"}
-				placeholder={
-					"Showcase your experience, skills, and areas of expertise, emphasizing what you can contribute to the company and why you are the ideal candidate for the role. "
-				}
-				button={"Add"}
-			/>
-			<ProfileFormItem label={"Curriculum Vitae"} button={"Upload"} />
-			<ProfileFormItem
-				label={"Portfolio"}
-				placeholder={"Add links to your online projects and portfolios."}
-				button={"Add"}
-			/>
-		</section>
-	);
-};
+			<div className='w-[40%] md:ps-20 mt-4 md:pt-0'>
+				<button className='bg-black text-white rounded-2xl py-1 px-3 self-center md:self-start'>Edit profile</button>
+			</div>
+		</div>
+		<div>
+			<div className='flex md:gap-12 gap-6 mt-6 font-light mb-px-0 px-2'>
+				<p className={`p-2 hover:bg-slate-100 cursor-pointer ${profile === 'experience' ? 'border-b-[1px] border-b-black' : ''}`} onClick={() => setProfile("experience")}>Experience</p>
+				<p className={`p-2 hover:bg-slate-100 cursor-pointer ${profile === 'biography' ? 'border-b-[1px] border-b-black' : ''}`} onClick={() => setProfile("biography")}>Biography</p>
+				<p className={`p-2 hover:bg-slate-100 cursor-pointer ${profile === 'skills' ? 'border-b-[1px] border-b-black' : ''}`} onClick={() => setProfile("skills")}>Skills</p>
+				<p className={`p-2 hover:bg-slate-100 cursor-pointer ${profile === 'portfolio' ? 'border-b-[1px] border-b-black' : ''}`} onClick={() => setProfile("portfolio")}>Portfolio</p>
+			</div>
+			<hr className='mb-4 h-[1px]' />
+			{
+				profile === 'experience' ? (
+					<Experience />
+				) : (
+					profile === "biography" ? (
+						<Biography />
+					) : (
+						profile === "skills" ? (
+							<Skills />
+						) : (<Portfolio />)
+					)
+				)
+			}
+		</div>
+	</div>
+  )
+}
 
-export default Profile;
+export default Profile
