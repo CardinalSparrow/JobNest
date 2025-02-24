@@ -7,10 +7,13 @@ export default {
 				primary: "#22577A",
 				secondary: "#38A3A5",
 				grey: "#656565",
+				grey2: "#D9D9D9",
 				dark: "#1f1f1f",
 				background1: "#57CC99",
 				fields: "#A5E0C6",
 				extra: "#C4E2F6",
+				extra2: "#44009A",
+				extra3: "#C864E1",
 				background2: { default: "#80ED99", 100: "#C7F9CC" },
 				background3: "#C4E7FE"
 			},
