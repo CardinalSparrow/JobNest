@@ -8,7 +8,7 @@ export default function TrackApplications() {
   return (
     <div >
       <div>
-        <select name="" id="" onChange={(e)=>handleDropDownChange(e)}>
+        <select name="" id="" onChange={(e)=>handleDropDownChange(e)} className="text-xl">
           <option value="default" defaultValue disabled>Select Tracker</option>
           <option value="posted">View jobs posted</option>
           <option value="applied">View jobs applied</option>
