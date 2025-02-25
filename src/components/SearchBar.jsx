@@ -5,17 +5,17 @@ export default function SearchBar({ bg }) {
 		<div>
 			<div className="grid grid-cols-3 xl:h-24 lg:h-18 sm:h-14 border-2 border-primary rounded-xl p-1 items-center sm:text-sm text-xs">
 				<input
-					className=" text-center  text-primary py-3 bg-transparent border-r border-primary h-full"
+					className=" text-center  text-primary py-3 bg-transparent border-r border-primary h-full outline-none"
 					type="text"
 					placeholder="Industry"
 				/>
 				<input
-					className="text-center text-primary py-3 bg-transparent border-r border-primary h-full"
+					className="text-center text-primary py-3 bg-transparent border-r border-primary h-full outline-none"
 					type="text"
 					placeholder="Location"
 				/>
 				<input
-					className=" text-center text-primary py-3 bg-transparent h-full"
+					className=" text-center text-primary py-3 bg-transparent h-full outline-none"
 					type="text"
 					placeholder="Keyword"
 				/>

@@ -68,4 +68,5 @@ export default function JobOpening({ jobOpening, bg }) {
       </div>
     </div>
   );
+
 }

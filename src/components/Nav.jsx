@@ -202,18 +202,18 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 						</ul>
 					)}
 				</li>
-				{/* <li>
+				<li>
 					<Link
-						to="sign-in"
+						to="profile"
 						className={``}
 						onClick={() => {
-							setMenu("sign-in");
+							setMenu("profile");
 							setMobileMenuOpen(false);
 						}}
 					>
-						Sign in{menu === "sign-in" && !AuthPage}
+						Profile{menu === "profile" && !AuthPage && <hr />}
 					</Link>
-				</li> */}
+				</li>
 				<li>
 					<Link
 						to="sign-up"

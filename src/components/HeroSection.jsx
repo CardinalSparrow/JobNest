@@ -16,7 +16,7 @@ const HeroSection = () => {
 					</h2>
 					<p>
 						Discover opportunities that match your skills and ambitions. Connect
-						with top talent to drive your business forward. Whether you're
+						with top talent to drive your business forward, whether you're
 						building your career or growing your team, we’re here to make the
 						perfect match happen!
 					</p>
