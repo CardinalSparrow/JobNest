@@ -121,10 +121,10 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 							</li>
 							<li>
 								<Link
-									to="/find/remote"
+									to="/find/track_applications"
 									className="block px-4 py-2 hover:bg-gray-100"
 								>
-									Remote Jobs
+									Track Applications
 								</Link>
 							</li>
 							<li>
