@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
 	return (
-		<footer className="grid sm:grid-cols-4 items-center  grid-cols-2 bg-white text-primary sm:w-full mx-5 my-5 sm:gap-20 md:gap-10 gap-3 text-[12px]">
+		<footer className="grid sm:grid-cols-4 items-center  grid-cols-2 bg-white text-primary sm:w-full mx-3 my-5 sm:gap-20 md:gap-14 gap-3 text-[12px]">
 			<div className="sm:text-[14px] ">
 				<h1 className="sm:text-[30px] text-[18px]  font-semibold">JobNest</h1>
 				<h3 className="font-semibold ">Contact Us</h3>
