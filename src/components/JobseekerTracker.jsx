@@ -8,7 +8,7 @@ export default function JobseekerTracker() {
       jobTitle: "Senior Designer",
       status: "Interview Scheduled",
       attachments: "2 files",
-      dateApplied: "15/11/2024",
+      dateApplied: "15/11/24",
     },
     {
       id:"mx121",
@@ -16,7 +16,7 @@ export default function JobseekerTracker() {
       jobTitle: "UX Designer",
       status: "Rejected",
       attachments: "3 files",
-      dateApplied: "10/11/2024",
+      dateApplied: "10/11/24",
     },
     {
       id:"mx122",
@@ -24,7 +24,7 @@ export default function JobseekerTracker() {
       jobTitle: "Marketing Manager",
       status: "Review in Progress",
       attachments: "2 files",
-      dateApplied: "02/11/2024",
+      dateApplied: "02/11/24",
     },
     {
       id:"mx123",
@@ -32,7 +32,7 @@ export default function JobseekerTracker() {
       jobTitle: "Senior Designer",
       status: "Interview Scheduled",
       attachments: "3 files",
-      dateApplied: "15/11/2024",
+      dateApplied: "15/11/24",
     },
     {
       id:"mx124",
@@ -40,7 +40,7 @@ export default function JobseekerTracker() {
       jobTitle: "Graphics Designer",
       status: "Rejected",
       attachments: "2 files",
-      dateApplied: "15/11/2024",
+      dateApplied: "15/11/24",
     },
     {
       id:"mx125",
@@ -48,7 +48,7 @@ export default function JobseekerTracker() {
       jobTitle: "Software Engineer",
       status: "Interview Scheduled",
       attachments: "2 files",
-      dateApplied: "15/11/2024",
+      dateApplied: "15/11/24",
     },
   ])
   return (

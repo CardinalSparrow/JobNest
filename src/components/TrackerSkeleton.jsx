@@ -46,11 +46,11 @@ export default function TrackerSkeleton({
   };
   return (
     <div
-      className=" h-auto w-[90%] sm:w-[65vw] p-5 mx-auto my-6 grid gap-3 rounded-3xl"
+      className=" h-auto  text-sm  mx-auto my-6 w-[95vw] md:w-[65vw] lg:w-[60vw] py-5 px-2 md:px-4 lg:px-5 rounded-2xl"
       style={{ background: bgColor, color: textColor }}
     >
-      <div className="border-b border-gray-300 flex flex-col justify-end">
-        <div className="flex w-[25%] justify-between items-end text-white">
+      <div className="border-b border-gray-300 flex flex-col justify-end mb-3">
+        <div className="flex w-[50%] sm:w-[25%] justify-between items-end text-white">
           <div
             className="cursor-pointer hover:border-b hover:border-white transition-all delay-100"
             onClick={isJobseeker ? showAllApp : showAll}
@@ -72,24 +72,24 @@ export default function TrackerSkeleton({
         </div>
       </div>
       <div
-        className="flex justify-around items-center h-[45px] text-white"
+        className="flex justify-between sm:justify-around items-center mb-4 h-[45px] w-[100%] text-white"
         style={{ background: rowBg }}
       >
         {" "}
         <div className=" w-[25%] text-left pl-2 ">
-          {isJobseeker ? "COMPANY" : "APPLICANTS"}
+          {isJobseeker ? "Company" : "Applicants"}
         </div>
         <div className=" w-[20%]">
-          {isJobseeker ? "JOB TITLE" : "ATTACHMENTS"}
+          {isJobseeker ? "Job Title" : "Attachments"}
         </div>
         <div className=" w-[20%]">
-          {isJobseeker ? "STATUS" : "DATE APPLIED"}
+          {isJobseeker ? "Status" : "Date applied"}
         </div>
         <div className=" w-[17%]">
-          {isJobseeker ? "ATTACHMENTS" : "SHORTLIST"}
+          {isJobseeker ? "Attachments" : "Shortlist"}
         </div>
         <div className=" w-[17%]">
-          {isJobseeker ? "DATE APPLIED" : "REJECT"}
+          {isJobseeker ? "Date Applied" : "Reject"}
         </div>
       </div>
       {!isJobseeker &&

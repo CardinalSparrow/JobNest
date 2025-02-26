@@ -10,6 +10,7 @@ import SavedJobs from "./pages/SavedJobs";
 import ApplicationDetails from "./pages/ApplicationDetails";
 import Profile from "./pages/Profile";
 import TrackApplications from "./pages/TrackApplications"
+import PostJobs from "./pages/PostJobs";
 const Pages = () => {
 	return (
 		<div className="lg:mx-14 sm:mx-10">
@@ -17,7 +18,7 @@ const Pages = () => {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/find" element={<FindJobs />} />
-				<Route path="/post" element={<div>Post a Job Page</div>} />
+				<Route path="/post" element={<PostJobs/>} />
 				<Route path="/sign-up" element={<AuthPage page='sign-up' />} />
 				<Route path="/profile" element={<Profile />} />
 				<Route path="/find/saved" element={<SavedJobs/>}/>
