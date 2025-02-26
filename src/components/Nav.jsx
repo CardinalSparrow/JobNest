@@ -47,7 +47,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 		}
 
 		if (isOpen) {
-			setDropdownOpen((prev) => ({ ...prev, [type]: true }));
+			setDropdownOpen({ find: type === "find", post: type === "post" });
 		} else {
 			timeoutRef.current = setTimeout(() => {
 				setDropdownOpen((prev) => ({ ...prev, [type]: false }));
