@@ -6,8 +6,9 @@ const Footer = () => {
 			<div className="sm:text-[14px] ">
 				<h1 className="sm:text-[30px] text-[18px]  font-semibold">JobNest</h1>
 				<h3 className="font-semibold ">Contact Us</h3>
-				<p>Jobnestng@gmail.com </p>
-				<p>(+234 456 777 934) </p>
+				<p>cardinalsparrow@gmail.com </p>
+				<p>(+234 703 304 8034) </p>
+				<p>(+234 814 598 7402) </p>
 			</div>
 			<div className="sm:text-[14px]">
 				<h3 className="font-semibold ">Job Seekers</h3>
