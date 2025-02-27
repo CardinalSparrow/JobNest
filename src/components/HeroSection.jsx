@@ -37,11 +37,14 @@ const HeroSection = () => {
 					className="absolute sm:-left-5 xl:top-20 sm:w-[44px] sm:top-16 w-[24px] top-8 -left-3"
 					alt=""
 				/>
-				<img
-					className="absolute xl:-bottom-64 lg:-bottom-36 -bottom-32 w-full "
-					src={ellipse}
-					alt="Background ellipse decoration"
-				/>
+				<div className="relative w-full flex justify-center mx-auto">
+					<img
+						className="absolute xl:-bottom-64 lg:-bottom-36 -bottom-32 w-full  max-w-[700px] md:min-w-[40%]"
+						src={ellipse}
+						alt="Background ellipse decoration"
+					/>
+				</div>
+
 				<div className="grid grid-cols-4 absolute xl:-bottom-28 sm:-bottom-16 -bottom-14 w-full xl:gap-20 gap-0 xl:px-16 lg:px-5 px-2">
 					<Statistic
 						value="30+"
