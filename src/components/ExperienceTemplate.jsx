@@ -2,7 +2,7 @@ import React from 'react'
 import { IoLocationSharp } from 'react-icons/io5'
 import { CiClock2 } from "react-icons/ci";
 
-const ExperienceTemplate = ({img, title, date}) => {
+const ExperienceTemplate = ({img, title, date, description, onEdit}) => {
   return (
     <div className='flex flex-col md:flex-row md:p-8 pt-2'>
         <div className='grid'>
@@ -15,15 +15,12 @@ const ExperienceTemplate = ({img, title, date}) => {
                     <p>Oasis INC</p>
                     <p className='flex gap-1'><CiClock2 className='self-center' />{date}</p>
                     <p className='flex gap-1'><IoLocationSharp className='self-center' />Lagos, Nigeria</p>
-                    <p className='font-medium'>Edit</p>
+                    <p className='font-medium cursor-pointer' onClick={onEdit}>Edit</p>
                 </div>
             </div>
             <div>
                 <p className='text-sm md:text-base mb-4 md:mb-0'>
-                    I am a versatile professional with expertise in Virtual assistance, UI/UX design and social media management. 
-                    I bring strong organizational and communication skills to every role. 
-                    I am a versatile professional with expertise in Virtual assistance, UI/UX design and social media management. 
-                    I bring strong organizational and communication skills to every role
+                    {description}
                 </p>
             </div>
         </div>
