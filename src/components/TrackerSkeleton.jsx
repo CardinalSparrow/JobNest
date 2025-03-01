@@ -46,11 +46,11 @@ export default function TrackerSkeleton({
   };
   return (
     <div
-      className=" h-auto  text-sm  mx-auto my-6 w-[95vw] md:w-[65vw] lg:w-[60vw] py-5 px-2 md:px-4 lg:px-5 rounded-2xl"
+      className=" h-auto overflow-x-auto text-sm  mx-auto my-6 w-[95vw] md:w-[65vw] lg:w-[60vw] py-5 px-2 md:px-4 lg:px-5 rounded-2xl"
       style={{ background: bgColor, color: textColor }}
     >
-      <div className="border-b border-gray-300 flex flex-col justify-end mb-3">
-        <div className="flex w-[50%] sm:w-[25%] justify-between items-end text-white">
+      <div className="border-b w-[140%] md:w-[100%] lg:w-[100%] border-gray-300  flex flex-col justify-end mb-3">
+        <div className="flex w-[40%] sm:w-[25%] justify-between items-end text-white">
           <div
             className="cursor-pointer hover:border-b hover:border-white transition-all delay-100"
             onClick={isJobseeker ? showAllApp : showAll}
@@ -72,7 +72,7 @@ export default function TrackerSkeleton({
         </div>
       </div>
       <div
-        className="flex justify-between sm:justify-around items-center mb-4 h-[45px] w-[100%] text-white"
+        className="flex justify-between sm:justify-around items-center mb-4 h-[45px] w-[140%]  md:w-[100%] lg:w-[100%] text-white"
         style={{ background: rowBg }}
       >
         {" "}

@@ -10,7 +10,7 @@ export default function JobOpeningContainer() {
 			className={`flex flex-wrap w-full lg:w-4/5 mt-5 ml-auto mr-auto items-center justify-around `}
 		>
 			{jobOpenings.map((jobOpening) => (
-				<JobOpening jobOpening={jobOpening} key={jobOpening.id} />
+				<JobOpening jobOpening={jobOpening} key={jobOpening.id} bg={"white"}/>
 			))}
 		</div>
 	);
