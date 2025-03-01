@@ -11,6 +11,7 @@ import ApplicationDetails from "./pages/ApplicationDetails";
 import Profile from "./pages/Profile";
 import TrackApplications from "./pages/TrackApplications"
 import PostJobs from "./pages/PostJobs";
+import RecruiterProfile from "./pages/RecruiterProfile";
 const Pages = () => {
 	return (
 		<div className="lg:mx-14 sm:mx-10">
@@ -24,6 +25,7 @@ const Pages = () => {
 				<Route path="/find/saved" element={<SavedJobs/>}/>
 				<Route path="/application-details" element={<ApplicationDetails/>}/>
 				<Route path="/find/track_applications" element={<TrackApplications/>}/>
+				<Route path="/recruiter-profile" element={<RecruiterProfile/>}/>
 			</Routes>
 			<hr className="w-full absolute left-0 h-0.5" />
 			<Footer />
