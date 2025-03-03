@@ -148,7 +148,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 						</button>
 					</div>
 					{dropdownOpen === "post" && (
-						<ul className="sm:absolute flex flex-col text-sm sm:w-[150px] top-8 left-0 bg-green-200 shadow-2xl rounded-md">
+						<ul className="sm:absolute flex flex-col text-sm sm:w-[100px] top-8 left-0 bg-green-200 shadow-2xl rounded-md">
 							<li>
 								<Link
 									to="/post/posted"
@@ -173,7 +173,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 						</button>
 					</div>
 					{dropdownOpen === "profile" && (
-						<ul className="sm:absolute flex flex-col text-sm sm:w-[150px] top-8 left-0 bg-green-200 shadow-2xl rounded-mdd">
+						<ul className="sm:absolute flex flex-col text-sm top-8 left-0 bg-green-200 shadow-2xl rounded-mdd">
 							<li>
 								<Link
 									to="/profile"
