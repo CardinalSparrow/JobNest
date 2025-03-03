@@ -49,6 +49,12 @@ body {
 		width: 5px !important;
 		height: 5px !important;
 	}
+	hr {
+		background: var(--primary);
+		height: 3px;
+		border: none;
+		width: 100%;
+	}
 }
 @media (max-width: 425px) {
 	.swiper {

@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import icon from "../images/login-image.png";
 import {
-	IoCloseCircle,
+	IoClose,
 	IoMenuSharp,
 	IoChevronDown,
 	IoChevronUp,
@@ -11,21 +10,14 @@ import {
 const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 	const [menu, setMenu] = useState("home");
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-	// const [findJobsOpen, setFindJobsOpen] = useState(false);
-	// const [postJobsOpen, setPostJobsOpen] = useState(false);
-	const [dropdownOpen, setDropdownOpen] = useState({
-		find: false,
-		post: false,
-		profile: false,
-	});
-
+	const [dropdownOpen, setDropdownOpen] = useState(null); // Only one dropdown at a time
 	const navigate = useNavigate();
 	const location = useLocation();
+	const timeoutRef = useRef(null);
+	const mobileMenuRef = useRef(null);
 
 	const AuthPage =
 		location.pathname === "/sign-in" || location.pathname === "/sign-up";
-
-	const mobileMenuRef = useRef(null);
 
 	// Close mobile menu on navigation
 	useEffect(() => {
@@ -45,8 +37,6 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 
 		if (mobileMenuOpen) {
 			document.addEventListener("mousedown", handleClickOutside);
-		} else {
-			document.removeEventListener("mousedown", handleClickOutside);
 		}
 
 		return () => {
@@ -58,77 +48,35 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 		setMobileMenuOpen(!mobileMenuOpen);
 	};
 
+	// Toggle dropdown and ensure only one is open
 	const handleDropdownToggle = (type) => {
-		setDropdownOpen((prev) => ({
-			...prev,
-			[type]: !prev[type], // Toggle the selected dropdown
-		}));
+		setDropdownOpen((prev) => (prev === type ? null : type)); // Close previous and open new one
+		resetDropdownTimer();
 	};
 
-	// Close mobile menu when clicking outside
+	// Reset dropdown timeout
+	const resetDropdownTimer = () => {
+		if (timeoutRef.current) clearTimeout(timeoutRef.current);
+		timeoutRef.current = setTimeout(() => setDropdownOpen(null), 10000); // Auto-close after 10 sec
+	};
+
+	// Cleanup timeout on component unmount
 	useEffect(() => {
-		const handleClickOutside = (event) => {
-			if (
-				mobileMenuRef.current &&
-				!mobileMenuRef.current.contains(event.target)
-			) {
-				setMobileMenuOpen(false);
-			}
-		};
-
-		if (mobileMenuOpen) {
-			document.addEventListener("mousedown", handleClickOutside);
-		}
-
 		return () => {
-			document.removeEventListener("mousedown", handleClickOutside);
+			if (timeoutRef.current) clearTimeout(timeoutRef.current);
 		};
-	}, [mobileMenuOpen]); // Keep only one instance of this
-
-	const handleLogin = () => {
-		// setIsLoggedIn(true);
-		navigate("/login");
-	};
-	const handleLogout = () => {
-		setIsLoggedIn(false);
-	};
-
-	const handleLogButton = () => {
-		if (isLoggedIn) {
-			handleLogout();
-		} else {
-			handleLogin();
-		}
-	};
-
-	const timeoutRef = useRef({});
-
-	const handleDropdown = (type, isOpen) => {
-		if (timeoutRef.current[type]) {
-			clearTimeout(timeoutRef.current[type]);
-		}
-
-		if (isOpen) {
-			setDropdownOpen({
-				find: type === "find",
-				post: type === "post",
-				profile: type === "profile",
-			});
-		} else {
-			timeoutRef.current[type] = setTimeout(() => {
-				setDropdownOpen((prev) => ({ ...prev, [type]: false }));
-			}, 200);
-		}
-	};
+	}, []);
 
 	return (
 		<nav
 			ref={mobileMenuRef}
-			className=" relative flex items-center w-full sm:py-5 sm:my-5 my-2 justify-between bg-white border-b border-black-100 shadow-black-200  z-30"
+			className="relative flex items-center w-full sm:py-5 sm:my-5 my-2 lg:justify-between gap-8 bg-white border-b border-black-100 shadow-black-200 z-30"
 		>
 			<Link to="/" onClick={() => setMenu("home")}>
-				<div className="sm:p-2 p-1 mx-5">
-					<h1 className="text-primary xl:text-5xl text-3xl">JobNest</h1>
+				<div className="sm:p-2 p-1 sm:mx-1 mx-4">
+					<h1 className="text-primary xl:text-5xl lg:text-3xl text-2xl">
+						JobNest
+					</h1>
 				</div>
 			</Link>
 			<div
@@ -137,46 +85,37 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 				aria-label="Toggle mobile menu"
 			>
 				{mobileMenuOpen ? (
-					<IoCloseCircle className="text-red-900" />
+					<IoClose className="text-red-900 w-8 h-8" />
 				) : (
-					<IoMenuSharp className="text-primary" />
+					<IoMenuSharp className="text-primary w-8 h-8" />
 				)}
 			</div>
 			<ul
-				className={`nav-menu sm:bg-transparent bg-background2-default opacity-90 sm:relative absolute sm:flex sm:flex-row flex-col  sm:items-center xl:gap-12 sm:gap-12 text-primary text-md sm:w-auto w-[50%] rounded-md sm:top-0 sm:right-0 top-12 right-2 gap-2 sm:pb-0 pb-5 sm:pl-0 px-4 ${
+				className={`nav-menu sm:bg-transparent bg-background2-default opacity-90 sm:relative absolute sm:flex sm:flex-row flex-col sm:items-center xl:gap-12 sm:gap-8 text-primary text-md sm:w-auto w-[50%] rounded-md sm:top-0 sm:right-0 top-12 right-2 gap-2 sm:pb-0 pb-5 sm:pl-0 px-4 ${
 					mobileMenuOpen ? "flex" : "hidden"
 				}`}
 			>
 				<li>
-					<Link
-						to="/"
-						className={``}
-						onClick={() => {
-							setMenu("home");
-							setMobileMenuOpen(false);
-						}}
-					>
-						Home{menu === "home" && !AuthPage && <hr />}
-					</Link>
+					<div className="flex items-center gap-2">
+						<Link to="/" onClick={() => setMenu("home")}>
+							Home {menu === "home" && !AuthPage && <hr />}
+						</Link>
+					</div>
 				</li>
-				<li
-					className="relative sm:hover:block"
-					// onMouseLeave={() => handleDropdown("find", false)}
-					// onMouseEnter={() => handleDropdown("find", true)}
-				>
-					<div className="flex items-center justify-between sm:block">
+				<li className="relative">
+					<div className="flex items-center gap-2 justify-between">
 						<Link to="/find" onClick={() => setMenu("find")}>
-							Find Jobs{menu === "find" && !AuthPage && <hr />}
+							Find Jobs {menu === "find" && !AuthPage && <hr />}
 						</Link>
 						<button
-							className=" lg:ml-4 text-xl "
+							className="text-xl"
 							onClick={() => handleDropdownToggle("find")}
 						>
-							{dropdownOpen.find ? <IoChevronUp /> : <IoChevronDown />}
+							{dropdownOpen === "find" ? <IoChevronUp /> : <IoChevronDown />}
 						</button>
 					</div>
-					{dropdownOpen.find && (
-						<ul className="w-max sm:absolute top-8 left-0 bg-white shadow-2xl rounded-md">
+					{dropdownOpen === "find" && (
+						<ul className="sm:absolute flex flex-col text-sm sm:w-[150px] top-8 left-0 bg-green-200 shadow-2xl rounded-md">
 							<li>
 								<Link
 									to="/find/saved"
@@ -196,28 +135,24 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 						</ul>
 					)}
 				</li>
-				<li
-					className="relative sm:hover:block"
-					// onMouseEnter={() => handleDropdown("post", true)}
-					// onMouseLeave={() => handleDropdown("post", false)}
-				>
-					<div className="flex items-center justify-between sm:block">
+				<li className="relative">
+					<div className="flex items-center gap-2 justify-between">
 						<Link to="/post" onClick={() => setMenu("post")}>
-							Post a Job{menu === "post" && !AuthPage && <hr />}
+							Post a Job {menu === "post" && !AuthPage && <hr />}
 						</Link>
 						<button
-							className=" lg:ml-4 text-xl "
+							className="text-xl"
 							onClick={() => handleDropdownToggle("post")}
 						>
-							{dropdownOpen.post ? <IoChevronUp /> : <IoChevronDown />}
+							{dropdownOpen === "post" ? <IoChevronUp /> : <IoChevronDown />}
 						</button>
 					</div>
-					{dropdownOpen.post && (
-						<ul className="w-max sm:absolute top-8 left-0 bg-white shadow-2xl rounded-md">
+					{dropdownOpen === "post" && (
+						<ul className="sm:absolute flex flex-col text-sm sm:w-[150px] top-8 left-0 bg-green-200 shadow-2xl rounded-md">
 							<li>
 								<Link
 									to="/post/posted"
-									className="block px-4 py-2 hover:bg-gray-100"
+									className="block px-2 py-2 hover:bg-gray-100"
 								>
 									Posted Jobs
 								</Link>
@@ -225,24 +160,20 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 						</ul>
 					)}
 				</li>
-				<li
-					className="relative sm:hover:block"
-					// onMouseEnter={() => handleDropdown("profile", true)}
-					// onMouseLeave={() => handleDropdown("profile", false)}
-				>
-					<div className="flex items-center justify-between sm:block">
+				<li className="relative">
+					<div className="flex items-center gap-2 justify-between">
 						<Link to="/profile" onClick={() => setMenu("profile")}>
-							Profile{menu === "profile" && !AuthPage && <hr />}
+							Profile {menu === "profile" && !AuthPage && <hr />}
 						</Link>
 						<button
-							className="sm:hidden ml-2 text-xl"
+							className="text-xl"
 							onClick={() => handleDropdownToggle("profile")}
 						>
-							{dropdownOpen.profile ? <IoChevronUp /> : <IoChevronDown />}
+							{dropdownOpen === "profile" ? <IoChevronUp /> : <IoChevronDown />}
 						</button>
 					</div>
-					{dropdownOpen.profile && (
-						<ul className="w-max sm:absolute top-8 left-0 bg-white shadow-2xl rounded-md">
+					{dropdownOpen === "profile" && (
+						<ul className="sm:absolute flex flex-col text-sm sm:w-[150px] top-8 left-0 bg-green-200 shadow-2xl rounded-mdd">
 							<li>
 								<Link
 									to="/profile"
@@ -262,29 +193,16 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 						</ul>
 					)}
 				</li>
-
-				<li>
+				<li className="sm:mt-0 mt-10 sm:w-auto sm:block flex justify-center">
 					<Link
 						to="sign-up"
-						className={`text-white bg-secondary px-4 py-2 rounded-md`}
-						onClick={() => {
-							setMenu("sign-up");
-							setMobileMenuOpen(false);
-						}}
+						className="text-white bg-secondary px-4 py-2 rounded-md"
+						onClick={() => setMenu("sign-up")}
 					>
-						Sign up{menu === "sign-up" && !AuthPage}
+						Sign up {menu === "sign-up" && !AuthPage}
 					</Link>
 				</li>
 			</ul>
-
-			{/* {!AuthPage && (
-				<button
-					className="mr-12 sm:px-5 px-2 sm:py-1.5 text-sm rounded-3xl bg-white text-red-800 hover:bg-red-800 hover:text-white font-pextrabold border-black border-solid border"
-					onClick={handleLogButton}
-				>
-					{isLoggedIn ? "Logout" : "Login"}
-				</button>
-			)} */}
 		</nav>
 	);
 };
