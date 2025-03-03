@@ -6,7 +6,7 @@
 	--bgColor2: #80ed99;
 	--bgColor3: #c7f9cc;
 }
-*{
+* {
 	box-sizing: border-box;
 }
 .nav-menu li:hover {
@@ -48,6 +48,12 @@ body {
 	.swiper-pagination-bullet {
 		width: 5px !important;
 		height: 5px !important;
+	}
+	hr {
+		background: var(--primary);
+		height: 3px;
+		border: none;
+		width: 100%;
 	}
 }
 @media (max-width: 425px) {

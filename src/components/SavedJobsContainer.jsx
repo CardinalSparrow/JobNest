@@ -20,12 +20,16 @@ export default function SavedJobsContainer() {
 		);
 	}
 	return (
-		<div
-			className={`flex sm:flex-row flex-col w-full mt-5 ml-auto mr-auto items-center justify-around `}
-		>
-			{savedJobs.map((jobOpening) => (
-				<JobOpening jobOpening={jobOpening} key={jobOpening.id} bg={"white"}/>
-			))}
+		<div className="flex  sm:justify-center">
+			<div className={`grid sm:grid-cols-2 lg:grid-cols-3 mt-5 mx-4 gap-4 `}>
+				{savedJobs.map((jobOpening) => (
+					<JobOpening
+						jobOpening={jobOpening}
+						key={jobOpening.id}
+						bg={"white"}
+					/>
+				))}
+			</div>
 		</div>
 	);
 }
